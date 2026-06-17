@@ -105,7 +105,7 @@ if file_path:
                     send_alert()
                 else:
                     color = (0, 255, 0)
-                    text = f"✓ NORMAL (Fall frames: {fall_counter})"
+                    text = f"NORMAL (Fall frames: {fall_counter})"
                 
                 annotated_frame = results[0].plot()
                 cv2.rectangle(annotated_frame, (int(x1), int(y1)), (int(x2), int(y2)), color, 3)
@@ -161,11 +161,11 @@ if file_path:
             # Với hình ảnh đơn, không dùng counter
             if aspect_ratio > ASPECT_RATIO_THRESHOLD and torso_angle > TORSO_ANGLE_THRESHOLD:
                 color = (0, 0, 255)
-                text = "🚨 FALL DETECTED! 🚨"
+                text = "FALL DETECTED!"
                 send_alert()
             else:
                 color = (0, 255, 0)
-                text = "✓ NORMAL"
+                text = "NORMAL"
                 
             annotated_frame = results[0].plot()
             cv2.rectangle(annotated_frame, (int(x1), int(y1)), (int(x2), int(y2)), color, 3)
